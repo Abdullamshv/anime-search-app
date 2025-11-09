@@ -8,7 +8,7 @@ import AnimeCard from '../../components/AnimeCard';
 import Pagination from '../../components/Pagination';
 import Loader from '../../components/Loader';
 import SkeletonLoader from '../../components/SkeletonLoader';
-import searchPageBackground from '../../assets/search_page_background.jpg';
+import searchPageBackground from '../../assets/backgrounds/search_page_background.jpg';
 
 export default function SearchPage() {
   const dispatch = useDispatch<AppDispatch>();

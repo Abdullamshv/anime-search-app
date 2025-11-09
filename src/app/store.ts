@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from '../features/search/searchSlice';
-import animeDetailReducer from '../features/detail/animeDetailSlice';
+import searchReducer from '../pages/search/searchSlice';
+import animeDetailReducer from '../pages/detail/animeDetailSlice';
 
 export const store = configureStore({
   reducer: {

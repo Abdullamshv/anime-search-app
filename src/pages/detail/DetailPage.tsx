@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '../../app/store';
 import { fetchAnimeDetail, clearAnime } from './animeDetailSlice';
 import Loader from '../../components/Loader';
+import detailPageBackground from '../../assets/backgrounds/detail_page_background.jpg';
 
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -25,18 +26,40 @@ export default function DetailPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <Loader />
+      <div
+        className="relative flex justify-center items-center min-h-screen"
+        style={{
+          backgroundImage: `url(${detailPageBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+        <div className="relative z-10">
+          <Loader />
+        </div>
       </div>
     );
   }
 
   if (error || !anime) {
     return (
-      <div className="flex justify-center items-center px-4 min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <div className="text-center">
+      <div
+        className="relative flex justify-center items-center px-4 min-h-screen"
+        style={{
+          backgroundImage: `url(${detailPageBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+        <div className="relative z-10 text-center">
           <div className="mb-4 text-6xl">😢</div>
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mb-2 text-2xl font-bold text-white">
             {error || 'Anime not found'}
           </h2>
           <button
@@ -54,8 +77,18 @@ export default function DetailPage() {
   const trailerUrl = anime.trailer?.embed_url || anime.trailer?.url;
 
   return (
-    <div className="px-4 py-8 min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="mx-auto max-w-6xl">
+    <div
+      className="relative px-4 py-8 min-h-screen"
+      style={{
+        backgroundImage: `url(${detailPageBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+      <div className="relative z-10 mx-auto max-w-6xl">
         <button
           onClick={() => navigate('/')}
           className="flex gap-2 items-center px-6 py-3 mb-6 text-white rounded-lg transition-colors bg-anime-primary hover:bg-anime-primary/90"
