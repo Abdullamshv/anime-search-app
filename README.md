@@ -77,8 +77,3 @@ src/
 ## API
 
 This app uses the [Jikan API](https://docs.api.jikan.moe/) - an unofficial MyAnimeList API.
-
-## License
-
-MIT
-
