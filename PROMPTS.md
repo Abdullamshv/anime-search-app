@@ -31,7 +31,7 @@ This Anime Search App was created using AI assistance to build a complete React 
 **Purpose**: Create API service functions with cancelable requests
 
 **What it helped with**:
-- Implementing `jikanApi.ts` with search, detail, and top anime functions
+- Implementing `src/api/jikanApi.ts` with search, detail, and top anime functions
 - Adding AbortController for canceling in-flight requests
 - Proper error handling for API calls
 - Using the Jikan API v4 endpoints correctly
@@ -40,59 +40,43 @@ This Anime Search App was created using AI assistance to build a complete React 
 **Purpose**: Set up Redux Toolkit with slices for search and anime details
 
 **What it helped with**:
-- Creating Redux store configuration
-- Implementing `searchSlice` with async thunks for search and top anime
-- Implementing `animeDetailSlice` for anime detail state
+- Creating Redux store configuration in `src/app/store.ts`
+- Implementing search and detail-related state in `src/pages/search/searchSlice.ts` and `src/pages/detail/animeDetailSlice.ts`
 - Managing loading, error, and data states properly
 
 ### 5. Custom Hooks Prompt
 **Purpose**: Create reusable custom hooks
 
 **What it helped with**:
-- Implementing `useDebounce` hook for debouncing search input (250ms delay)
+- Implementing `src/hooks/useDebounce.ts` for debouncing search input (250ms delay)
 - Clean implementation with proper cleanup
 
 ### 6. UI Components Prompt
 **Purpose**: Create reusable UI components
 
 **What it helped with**:
-- **SearchBar**: Search input with icon and styling
-- **AnimeCard**: Card component displaying anime poster, title, type, year, and score
-- **Pagination**: Pagination component with ellipsis for large page counts
-- **Loader**: Animated loading spinner
-- **SkeletonLoader**: Skeleton loading state for better UX
+- **SearchBar** (`src/components/SearchBar.tsx`): Search input with icon and styling
+- **AnimeCard** (`src/components/AnimeCard.tsx`): Card component displaying anime poster, title, type, year, and score
+- **Pagination** (`src/components/Pagination.tsx`): Pagination component with ellipsis for large page counts
+- **Loader** (`src/components/Loader.tsx`): Animated loading spinner
+- **SkeletonLoader** (`src/components/SkeletonLoader.tsx`): Skeleton loading state for better UX
 
-### 7. Search Page Implementation Prompt
-**Purpose**: Create the main search page with debounced search and pagination
-
-**What it helped with**:
-- Integrating debounced search (250ms)
-- Handling empty search state (showing top anime)
-- Server-side pagination
-- Loading states and error handling
-- Empty state messaging
-- Responsive grid layout
-
-### 8. Detail Page Implementation Prompt
-**Purpose**: Create the anime detail page
+### 7. Page Implementation Prompts
+**Purpose**: Implement main search and detail pages
 
 **What it helped with**:
-- Displaying comprehensive anime information
-- Handling trailer embeds
-- Genre display
-- Responsive layout with image and details side-by-side
-- Error handling for missing anime
-- Back navigation button
+- **SearchPage** (`src/pages/search/SearchPage.tsx`): Debounced search (250ms), top anime display, pagination, loading states, error handling, empty state messaging, responsive grid layout
+- **DetailPage** (`src/pages/detail/DetailPage.tsx`): Detailed anime info, trailer embeds, genre display, responsive layout with image and details side-by-side, error handling, back navigation button
 
-### 9. Routing and App Setup Prompt
+### 8. Routing and App Setup Prompt
 **Purpose**: Set up React Router and main app structure
 
 **What it helped with**:
-- Configuring React Router with routes
-- Setting up Redux Provider
+- Configuring React Router via `src/App.tsx`
+- Setting up Redux Provider in `src/main.tsx`
 - Main app entry point configuration
 
-### 10. Styling Prompt
+### 9. Styling Prompt
 **Purpose**: Create modern, anime-themed UI
 
 **What it helped with**:
@@ -130,4 +114,4 @@ This Anime Search App was created using AI assistance to build a complete React 
 - Cancelable requests prevent unnecessary API calls
 - The project follows React best practices and modern patterns
 - All components are functional components using hooks only
-
+- Project language composition: TypeScript (92.8%), JavaScript (3.8%), CSS (2.4%), HTML (1%)
