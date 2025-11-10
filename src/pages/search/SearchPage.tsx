@@ -39,14 +39,12 @@ export default function SearchPage() {
 
   // Handle pagination changes
   useEffect(() => {
-    if (currentPage > 1 || query.trim()) {
-      if (query.trim()) {
-        dispatch(fetchAnimeSearch({ query, page: currentPage }));
-      } else {
-        dispatch(fetchTopAnime(currentPage));
-      }
-    }
-  }, [currentPage, query, dispatch]);
+  if (query.trim()) {
+    dispatch(fetchAnimeSearch({ query, page: currentPage }));
+  } else {
+    dispatch(fetchTopAnime(currentPage));
+  }
+}, [currentPage, query, dispatch]);
 
   // Log errors for debugging
   useEffect(() => {
@@ -55,11 +53,11 @@ export default function SearchPage() {
     }
   }, [error]);
 
-  const handlePageChange = (page: number) => {
-    dispatch(setPage(page));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+const handlePageChange = (page: number) => {
+  if (page < 1 || page > totalPages) return;
+  dispatch(setPage(page));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
   return (
     <div
       className="relative px-4 py-8 min-h-screen"

@@ -43,7 +43,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-4 py-2 text-white rounded-lg transition-colors bg-anime-primary disabled:opacity-50 disabled:cursor-not-allowed hover:bg-anime-primary/90"
+        className="px-4 py-2 text-black rounded-lg transition-colors bg-white disabled:cursor-not-allowed hover:scale-105 "
       >
         Previous
       </button>
@@ -52,7 +52,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         {getPageNumbers().map((page, index) => {
           if (page === '...') {
             return (
-              <span key={`ellipsis-${index}`} className="px-4 py-2 text-gray-600 dark:text-gray-400">
+              <span key={`ellipsis-${index}`} className="px-4 py-2 text-white hover:cursor-pointer">
                 ...
               </span>
             );
@@ -65,8 +65,8 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
               onClick={() => onPageChange(pageNum)}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 currentPage === pageNum
-                  ? 'bg-anime-primary text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-anime-primary/20'
+                  ? 'bg-white text-black hover:scale-105 '
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-scale-105 '
               }`}
             >
               {pageNum}
@@ -78,7 +78,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-4 py-2 text-white rounded-lg transition-colors bg-anime-primary disabled:opacity-50 disabled:cursor-not-allowed hover:bg-anime-primary/90"
+        className="px-4 py-2 text-black rounded-lg transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-scale-105 "
       >
         Next
       </button>

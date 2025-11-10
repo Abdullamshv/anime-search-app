@@ -91,7 +91,7 @@ export default function DetailPage() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <button
           onClick={() => navigate('/')}
-          className="flex gap-2 items-center px-6 py-3 mb-6 text-white rounded-lg transition-colors bg-anime-primary hover:bg-anime-primary/90"
+          className="flex gap-2 items-center px-6 py-3 mb-6 text-white rounded-lg transition-colors bg-transparent hover:scale-105 border border-white "
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
