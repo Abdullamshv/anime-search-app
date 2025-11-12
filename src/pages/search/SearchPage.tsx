@@ -9,6 +9,7 @@ import Pagination from '../../components/Pagination';
 import Loader from '../../components/Loader';
 import SkeletonLoader from '../../components/SkeletonLoader';
 import searchPageBackground from '../../assets/backgrounds/search_page_background.jpg';
+import logoImage from "/anime_app_logo.svg"
 
 export default function SearchPage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -72,7 +73,7 @@ const handlePageChange = (page: number) => {
       <div className="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
       <div className="relative z-10 mx-auto max-w-7xl">
         <h1 className="flex gap-3 justify-center items-center mb-8 text-4xl font-bold text-center text-white">
-          <img src="/anime_app_logo.svg" alt="AnimeCorsair Logo" className="w-10 h-10" />
+          <img src={logoImage} alt="AnimeCorsair Logo" className="w-10 h-10" />
           <span>Anime Corsair</span>
         </h1>
 

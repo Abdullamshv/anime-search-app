@@ -4,7 +4,7 @@ import DetailPage from './pages/detail/DetailPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/anime-search-app/'>
       <Routes>
         <Route path="/" element={<SearchPage />} />
         <Route path="/anime/:id" element={<DetailPage />} />
